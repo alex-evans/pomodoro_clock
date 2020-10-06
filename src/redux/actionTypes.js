@@ -1,0 +1,5 @@
+export const OPERATOR_PRESSED = "OPERATOR_PRESSED";
+export const AC_PRESSED = "AC_PRESSED";
+export const DEC_PRESSED = "DEC_PRESSED";
+export const NUMBER_PRESSED = "NUMBER_PRESSED";
+export const EQUAL_PRESSED = "EQUAL_PRESSED";

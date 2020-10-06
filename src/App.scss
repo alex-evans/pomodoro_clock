@@ -1,0 +1,143 @@
+
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+
+  > header, > footer {
+    background-color: #4C5355;
+    color: white;
+    min-height: 50px;
+  }
+
+  > header {
+    grid-area: header;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  > main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 5% 90% 5%;
+    grid-template-areas:
+      '. . .'
+      '. calc-box .'
+      '. . .';
+
+    > #calc-box {
+      grid-area: calc-box;
+      background-color: black;
+      display: grid;
+      grid-template-columns: 1fr 50fr 1fr;
+      grid-template-rows: 2% 15% auto 2%;
+      grid-template-areas:
+        '. . .'
+        '. display-box .'
+        '. button-box .'
+        '. . .';
+
+        > #display-box {
+          grid-area: display-box;
+          background-color: #2F2440;
+          display: grid;
+          padding: 10px;
+          border-radius: 10px 10px 0 0;
+          grid-template-columns: auto;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas:
+            'input'
+            'display';
+
+            > #display-formula {
+              grid-area: input;
+              background-color: #E0D8BE;
+              text-align: right;
+              border-radius: 10px 10px 0 0;
+              padding: 1%;
+            }
+
+            > #display {
+              grid-area: display;
+              font-size: large;
+              background-color: #E0D8BE;
+              text-align: right;
+              border-radius: 0 0 10px 10px;
+              padding: 5px;
+            }
+        }
+
+        > #button-box {
+          grid-area: button-box;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: auto;
+          background-color: #2F2440;
+
+            > #clear {
+              grid-column-start: 1;
+              grid-column-end: 3;
+
+              > button {
+                background-color: #FF2511;
+              }
+            }
+
+            > #divide button {
+              background-color: #E0D8BE;
+            }
+
+            > #multiply button {
+              background-color: #E0D8BE;
+            }
+
+            > #subtract button {
+              background-color: #E0D8BE;
+            }
+
+            > #add button {
+              background-color: #E0D8BE;
+            }
+
+            > #equal button {
+              background-color: #958BAB;
+            }
+
+            > #zero {
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+
+            > #equal {
+              grid-column-start: 4;
+              grid-column-end: 5;
+              grid-row-start: 4;
+              grid-row-end: 6;
+            }
+
+            > .calc-button {
+
+              > button {
+                font-size: large;
+                background-color: #C6B79B;
+                border-radius: 8px;
+                height: 100%;
+                width: 100%;
+              }
+            }
+        }
+      }
+  }
+
+  > footer {
+    grid-area: footer;
+  }
+}
