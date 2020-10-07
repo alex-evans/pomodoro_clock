@@ -5,7 +5,7 @@ function Header() {
         <header>
             <nav id='header'>
                 <h1>
-                    Calculator
+                    Pomodoro
                 </h1>
             </nav>
         </header>

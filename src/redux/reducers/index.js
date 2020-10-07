@@ -1,4 +1,4 @@
 // import { combineReducers } from "redux";
-import calculator from "./calculator";
+import pomodoro from "./pomodoro";
 
-export default calculator;
+export default pomodoro;

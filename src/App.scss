@@ -26,118 +26,177 @@
   > main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 5% 90% 5%;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+    grid-template-rows: 1fr 6fr 6fr 6fr 1fr; 
     grid-template-areas:
-      '. . .'
-      '. calc-box .'
-      '. . .';
+      '. . . .'
+      '. break-controller session-controller .'
+      '. timer timer .'
+      '. timer-controller timer-controller .'
+      '. . . .';
 
-    > #calc-box {
-      grid-area: calc-box;
-      background-color: black;
+    > #break-controller {
+      grid-area: break-controller;
+      background-color: blue;
       display: grid;
-      grid-template-columns: 1fr 50fr 1fr;
-      grid-template-rows: 2% 15% auto 2%;
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-rows: 1fr 6fr 6fr 1fr;
       grid-template-areas:
         '. . .'
-        '. display-box .'
-        '. button-box .'
+        '. break-title .'
+        '. break-info .'
         '. . .';
 
-        > #display-box {
-          grid-area: display-box;
-          background-color: #2F2440;
-          display: grid;
-          padding: 10px;
-          border-radius: 10px 10px 0 0;
-          grid-template-columns: auto;
-          grid-template-rows: 1fr 1fr;
-          grid-template-areas:
-            'input'
-            'display';
-
-            > #display-formula {
-              grid-area: input;
-              background-color: #E0D8BE;
-              text-align: right;
-              border-radius: 10px 10px 0 0;
-              padding: 1%;
-            }
-
-            > #display {
-              grid-area: display;
-              font-size: large;
-              background-color: #E0D8BE;
-              text-align: right;
-              border-radius: 0 0 10px 10px;
-              padding: 5px;
-            }
+        > #break-title {
+          grid-area: break-title;
+          text-align: center;
         }
-
-        > #button-box {
-          grid-area: button-box;
+        
+        > #break-info {
+          grid-area: break-info;
+          text-align: center;
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
           grid-template-rows: auto;
-          background-color: #2F2440;
+          grid-template-areas:
+            '. break-minus break-length break-plus .';
 
-            > #clear {
-              grid-column-start: 1;
-              grid-column-end: 3;
-
-              > button {
-                background-color: #FF2511;
-              }
+            > #break-minus {
+              grid-area: break-minus;
             }
 
-            > #divide button {
-              background-color: #E0D8BE;
+            > #break-length {
+              grid-area: break-length;
             }
 
-            > #multiply button {
-              background-color: #E0D8BE;
+            > #break-plus {
+              grid-area: break-plus;
             }
 
-            > #subtract button {
-              background-color: #E0D8BE;
+        }
+
+    }
+
+    > #session-controller {
+      grid-area: session-controller;
+      background-color: green;
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-rows: 1fr 6fr 6fr 1fr;
+      grid-template-areas:
+        '. . .'
+        '. session-title .'
+        '. session-info .'
+        '. . .';
+
+        > #session-title {
+          grid-area: session-title;
+          text-align: center;
+        }
+        
+        > #session-info {
+          grid-area: session-info;
+          text-align: center;
+          display: grid;
+          grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            '. session-minus session-length session-plus .';
+
+            > #session-minus {
+              grid-area: session-minus;
             }
 
-            > #add button {
-              background-color: #E0D8BE;
+            > #session-length {
+              grid-area: session-length;
             }
 
-            > #equal button {
-              background-color: #958BAB;
-            }
-
-            > #zero {
-              grid-column-start: 1;
-              grid-column-end: 3;
-            }
-
-            > #equal {
-              grid-column-start: 4;
-              grid-column-end: 5;
-              grid-row-start: 4;
-              grid-row-end: 6;
-            }
-
-            > .calc-button {
-
-              > button {
-                font-size: large;
-                background-color: #C6B79B;
-                border-radius: 8px;
-                height: 100%;
-                width: 100%;
-              }
+            > #session-plus {
+              grid-area: session-plus;
             }
         }
+    }
+
+    > #timer {
+      grid-area: timer;
+      background-color: lightpink;
+      display: grid;
+      grid-template-columns: 1fr 6fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        '. timer-box .';
+
+      > #timer-box {
+        grid-area: timer-box;
+        background-color: lightcoral;
+        border-radius: 50%;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 1fr 4fr 4fr 1fr;
+        grid-template-areas:
+          '. . .'
+          '. timer-title .'
+          '. timer-time .'
+          '. . .';
+
+          > #timer-title {
+            grid-area: timer-title;
+            text-align: center;
+          }
+
+          > #timer-time {
+            grid-area: timer-time;
+            text-align: center;
+          }
+
       }
+
+    }
+
+    > #timer-controller {
+      grid-area: timer-controller;
+      background-color: yellow;
+      display: grid;
+      grid-template-columns: 4fr 2fr 2fr 2fr 4fr;
+      grid-template-rows: 1fr 1fr 4fr;
+      grid-template-areas:
+        '. . . . .'
+        '. timer-start timer-pause timer-restart .'
+        '. . . . .';
+
+      > #timer-start {
+        grid-area: timer-start;
+        text-align: center;
+      }
+
+      > #timer-pause {
+        grid-area: timer-pause;
+        text-align: center;
+      }
+
+      > #timer-restart {
+        grid-area: timer-restart;
+        text-align: center;
+      }
+      
+    }
+
   }
 
   > footer {
     grid-area: footer;
+  }
+
+  > * button {
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+
+  .btn-minus {
+    text-align: right;
+  }
+
+  .btn-plus {
+    text-align: left;
   }
 }

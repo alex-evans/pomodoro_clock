@@ -2,13 +2,13 @@ import React from 'react';
 import './App.scss';
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Calculator from "./components/calculator";
+import Pomodoro from "./components/pomodoro";
 
 function App() {
   return (
     <div id="app">
       <Header />
-      <Calculator />
+      <Pomodoro />
       <Footer />
     </div>
   );

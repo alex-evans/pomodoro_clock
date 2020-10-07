@@ -1,5 +1,5 @@
-export const OPERATOR_PRESSED = "OPERATOR_PRESSED";
-export const AC_PRESSED = "AC_PRESSED";
-export const DEC_PRESSED = "DEC_PRESSED";
-export const NUMBER_PRESSED = "NUMBER_PRESSED";
-export const EQUAL_PRESSED = "EQUAL_PRESSED";
+export const DECREASE_TIME = "DECREASE_TIME";
+export const INCREASE_TIME = "INCREASE_TIME";
+export const TIMER_START = "TIMER_START";
+export const TIMER_PAUSE = "TIMER_PAUSE";
+export const TIMER_RESTART = "TIMER_RESTART";

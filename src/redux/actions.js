@@ -1,32 +1,29 @@
-import { 
-    AC_PRESSED, 
-    DEC_PRESSED, 
-    NUMBER_PRESSED, 
-    OPERATOR_PRESSED,
-    EQUAL_PRESSED
+import {
+    DECREASE_TIME,
+    INCREASE_TIME,
+    TIMER_START,
+    TIMER_PAUSE,
+    TIMER_RESTART
 } from "./actionTypes";
 
-export const opperatorPressed = buttonId => ({
-    type: OPERATOR_PRESSED,
-    buttonId: buttonId
+export const decreaseTime = timingType => ({
+    type: DECREASE_TIME,
+    timingType: timingType
 });
 
-export const acPressed = buttonId => ({
-    type: AC_PRESSED,
-    buttonId: buttonId
+export const increaseTime = timingType => ({
+    type: INCREASE_TIME,
+    timingType: timingType
 });
 
-export const decPressed = buttonId => ({
-    type: DEC_PRESSED,
-    buttonId: buttonId
-});
+export const timerStart = {
+    type: TIMER_START
+};
 
-export const numberPressed = buttonId => ({
-    type: NUMBER_PRESSED,
-    buttonId: buttonId
-});
+export const timerPause = {
+    type: TIMER_PAUSE
+};
 
-export const equalPressed = buttonId => ({
-    type: EQUAL_PRESSED,
-    buttonId: buttonId
-});
+export const timerRestart = {
+    type: TIMER_RESTART
+};
