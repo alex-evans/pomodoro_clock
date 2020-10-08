@@ -10,7 +10,7 @@
     'footer';
 
   > header, > footer {
-    background-color: #4C5355;
+    background-color: #050533;
     color: white;
     min-height: 50px;
   }
@@ -37,8 +37,8 @@
 
     > #break-controller {
       grid-area: break-controller;
-      background-color: blue;
       display: grid;
+      background-color: #0D698B;
       grid-template-columns: 1fr 4fr 1fr;
       grid-template-rows: 1fr 6fr 6fr 1fr;
       grid-template-areas:
@@ -79,8 +79,8 @@
 
     > #session-controller {
       grid-area: session-controller;
-      background-color: green;
       display: grid;
+      background-color: #0D698B;
       grid-template-columns: 1fr 4fr 1fr;
       grid-template-rows: 1fr 6fr 6fr 1fr;
       grid-template-areas:
@@ -119,8 +119,8 @@
 
     > #timer {
       grid-area: timer;
-      background-color: lightpink;
       display: grid;
+      background-color: #0D698B;
       grid-template-columns: 1fr 6fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
@@ -128,8 +128,8 @@
 
       > #timer-box {
         grid-area: timer-box;
-        background-color: lightcoral;
         border-radius: 50%;
+        background-color: #E34234;
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
         grid-template-rows: 1fr 4fr 4fr 1fr;
@@ -155,8 +155,8 @@
 
     > #timer-controller {
       grid-area: timer-controller;
-      background-color: yellow;
       display: grid;
+      background-color: #0D698B;
       grid-template-columns: 4fr 2fr 2fr 2fr 4fr;
       grid-template-rows: 1fr 1fr 4fr;
       grid-template-areas:
@@ -166,7 +166,7 @@
 
       > #timer-start {
         grid-area: timer-start;
-        text-align: center;
+        text-align: right;
       }
 
       > #timer-pause {
@@ -176,7 +176,7 @@
 
       > #timer-restart {
         grid-area: timer-restart;
-        text-align: center;
+        text-align: left;
       }
       
     }

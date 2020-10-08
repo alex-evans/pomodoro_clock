@@ -10,11 +10,11 @@ class BreakController extends React.Component {
     }
 
     handleDecreaseClick() {
-        this.props.decreaseTime('break')
+        this.props.decreaseTime('Break')
     }
 
     handleIncreaseClick() {
-        this.props.increaseTime('break')
+        this.props.increaseTime('Break')
     }
 
     render() {

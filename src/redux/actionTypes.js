@@ -3,3 +3,4 @@ export const INCREASE_TIME = "INCREASE_TIME";
 export const TIMER_START = "TIMER_START";
 export const TIMER_PAUSE = "TIMER_PAUSE";
 export const TIMER_RESTART = "TIMER_RESTART";
+export const TIMER_RUN_SECOND = "TIMER_RUN_SECOND";

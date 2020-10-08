@@ -3,7 +3,8 @@ import {
     INCREASE_TIME,
     TIMER_START,
     TIMER_PAUSE,
-    TIMER_RESTART
+    TIMER_RESTART,
+    TIMER_RUN_SECOND
 } from "./actionTypes";
 
 export const decreaseTime = timingType => ({
@@ -16,14 +17,19 @@ export const increaseTime = timingType => ({
     timingType: timingType
 });
 
-export const timerStart = {
-    type: TIMER_START
-};
+export const timerStart = timerId => ({
+    type: TIMER_START,
+    timerId: timerId
+});
 
-export const timerPause = {
+export const timerPause = () => ({
     type: TIMER_PAUSE
-};
+});
 
-export const timerRestart = {
+export const timerRestart = () => ({
     type: TIMER_RESTART
-};
+});
+
+export const timerRunSecond = () => ({
+    type: TIMER_RUN_SECOND
+});

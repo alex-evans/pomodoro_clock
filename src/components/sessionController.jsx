@@ -10,11 +10,11 @@ class SessionController extends React.Component {
     }
 
     handleDecreaseClick() {
-        this.props.decreaseTime('session')
+        this.props.decreaseTime('Session')
     }
 
     handleIncreaseClick() {
-        this.props.increaseTime('session')
+        this.props.increaseTime('Session')
     }
 
     render() {
