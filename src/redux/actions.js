@@ -17,9 +17,10 @@ export const increaseTime = timingType => ({
     timingType: timingType
 });
 
-export const timerStart = timerId => ({
+export const timerStart = (timerId, audio) => ({
     type: TIMER_START,
-    timerId: timerId
+    timerId: timerId,
+    buzzer: audio
 });
 
 export const timerPause = () => ({

@@ -15,7 +15,7 @@ class TimerController extends React.Component {
     handleStartClick() {
         if (!this.props.timerRunning) {
             var timerId = setInterval(this.props.timerRunSecond, 1000);
-            this.props.timerStart(timerId)
+            this.props.timerStart(timerId, this.audioBeep)
         }
     };
 
@@ -34,13 +34,14 @@ class TimerController extends React.Component {
         return (
             <div id="timer-controller">
                 <div id="timer-start">
+                    <audio preload="auto" id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" ref={(audio) => { this.audioBeep = audio; }}></audio>
                     <button onClick={this.handleStartClick}><FontAwesomeIcon icon={faPlay} /></button>
                 </div>
                 <div id="timer-pause">
                     <button onClick={this.handlePauseClick}><FontAwesomeIcon icon={faPause} /></button>
                 </div>
                 <div id="timer-restart">
-                    <button onClick={this.handleRestartClick}><FontAwesomeIcon icon={faRedo} /></button>
+                    <button onClick={this.handleRestartClick}><FontAwesomeIcon icon={faRedo} id="reset" /></button>
                 </div>
             </div>
         )

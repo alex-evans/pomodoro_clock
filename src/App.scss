@@ -43,34 +43,35 @@
       grid-template-rows: 1fr 6fr 6fr 1fr;
       grid-template-areas:
         '. . .'
-        '. break-title .'
+        '. break-label .'
         '. break-info .'
         '. . .';
 
-        > #break-title {
-          grid-area: break-title;
+        > #break-label {
+          grid-area: break-label;
           text-align: center;
         }
         
         > #break-info {
           grid-area: break-info;
           text-align: center;
+          font-size: x-large;
           display: grid;
           grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
           grid-template-rows: auto;
           grid-template-areas:
-            '. break-minus break-length break-plus .';
+            '. break-decrement break-length break-increment .';
 
-            > #break-minus {
-              grid-area: break-minus;
+            > #break-decrement {
+              grid-area: break-decrement;
             }
 
             > #break-length {
               grid-area: break-length;
             }
 
-            > #break-plus {
-              grid-area: break-plus;
+            > #break-increment {
+              grid-area: break-increment;
             }
 
         }
@@ -85,12 +86,12 @@
       grid-template-rows: 1fr 6fr 6fr 1fr;
       grid-template-areas:
         '. . .'
-        '. session-title .'
+        '. session-label .'
         '. session-info .'
         '. . .';
 
-        > #session-title {
-          grid-area: session-title;
+        > #session-label {
+          grid-area: session-label;
           text-align: center;
         }
         
@@ -98,21 +99,22 @@
           grid-area: session-info;
           text-align: center;
           display: grid;
+          font-size: x-large;
           grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
           grid-template-rows: auto;
           grid-template-areas:
-            '. session-minus session-length session-plus .';
+            '. session-decrement session-length session-increment .';
 
-            > #session-minus {
-              grid-area: session-minus;
+            > #session-decrement {
+              grid-area: session-decrement;
             }
 
             > #session-length {
               grid-area: session-length;
             }
 
-            > #session-plus {
-              grid-area: session-plus;
+            > #session-increment {
+              grid-area: session-increment;
             }
         }
     }
@@ -135,17 +137,17 @@
         grid-template-rows: 1fr 4fr 4fr 1fr;
         grid-template-areas:
           '. . .'
-          '. timer-title .'
-          '. timer-time .'
+          '. timer-label .'
+          '. time-left .'
           '. . .';
 
-          > #timer-title {
-            grid-area: timer-title;
+          > #timer-label {
+            grid-area: timer-label;
             text-align: center;
           }
 
-          > #timer-time {
-            grid-area: timer-time;
+          > #time-left {
+            grid-area: time-left;
             text-align: center;
           }
 

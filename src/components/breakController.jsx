@@ -20,17 +20,17 @@ class BreakController extends React.Component {
     render() {
         return (
             <div id="break-controller">
-                <div id="break-title">
+                <div id="break-label">
                     <h3>Break Length</h3>
                 </div>
                 <div id="break-info">
-                    <div className="btn-minus" id="break-minus">
+                    <div className="btn-minus" id="break-decrement">
                         <button onClick={this.handleDecreaseClick}>-</button>
                     </div>
                     <div id="break-length">
                         {this.props.breakLength}
                     </div>
-                    <div className="btn-plus" id="break-plus">
+                    <div className="btn-plus" id="break-increment">
                         <button onClick={this.handleIncreaseClick}>+</button>
                     </div>
                 </div>                    

@@ -20,17 +20,17 @@ class SessionController extends React.Component {
     render() {
         return (
             <div id="session-controller">
-                <div id="session-title">
+                <div id="session-label">
                     <h3>Session Length</h3>
                 </div>
                 <div id="session-info">
-                    <div className="btn-minus" id="session-minus">
+                    <div className="btn-minus" id="session-decrement">
                         <button onClick={this.handleDecreaseClick}>-</button>
                     </div>
                     <div id="session-length">
                         {this.props.sessionLength}
                     </div>
-                    <div className="btn-plus" id="session-plus">
+                    <div className="btn-plus" id="session-increment">
                         <button onClick={this.handleIncreaseClick}>+</button>
                     </div>
                 </div>

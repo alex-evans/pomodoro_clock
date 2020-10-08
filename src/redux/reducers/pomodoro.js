@@ -13,10 +13,11 @@ const initialState = {
     timerRunning: false,
     timerSecs: 1500,
     currentRun: "Session",
-    timerId: ''
+    timerId: '',
+    buzzer: ''
 };
 
-const decreaseTime = (curTime) => curTime > 0 ? curTime - 1 : 0;
+const decreaseTime = (curTime) => curTime > 1 ? curTime - 1 : 1;
 const increaseTime = (curTime) => curTime < 60 ? curTime + 1 : 60;
 
 export default function(state=initialState, action) {
@@ -52,7 +53,7 @@ export default function(state=initialState, action) {
                 return state
             }
 
-            if (action.timingType === 'break') {
+            if (action.timingType === 'Break') {
                 const newBreakLength = increaseTime(state.breakLength)
                 const timerSecs = action.timingType === state.currentRun ? newBreakLength * 60 : state.timerSecs
                 return {
@@ -74,11 +75,13 @@ export default function(state=initialState, action) {
             return {
                 ...state,
                 timerRunning: true,
-                timerId: action.timerId
+                timerId: action.timerId,
+                buzzer: action.buzzer
             }
         }
 
         case TIMER_PAUSE: {
+            state.buzzer.pause()
             return {
                 ...state,
                 timerRunning: false
@@ -86,10 +89,27 @@ export default function(state=initialState, action) {
         }
 
         case TIMER_RESTART: {
+            state.buzzer.pause()
             return initialState
         }
 
         case TIMER_RUN_SECOND: {
+            document.getElementById('beep').pause();
+            state.buzzer.pause()
+
+            // Check if timer ran out, need to flip it to break or new session if so
+            if (state.timerSecs === 1) {
+                state.buzzer.play()
+                let flipCurrentRun = state.currentRun === 'Break' ? 'Session' : 'Break'
+                let newTimerMins = state.currentRun === 'Break' ? state.sessionLength : state.breakLength
+                let newTimerSecs = newTimerMins * 60
+                return {
+                    ...state,
+                    currentRun: flipCurrentRun,
+                    timerSecs: newTimerSecs
+                }
+            }
+
             const newTime = decreaseTime(state.timerSecs)
             return {
                 ...state,

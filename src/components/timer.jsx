@@ -19,10 +19,10 @@ class Timer extends React.Component {
         return (
             <div id="timer">
                 <div id="timer-box">
-                    <div id="timer-title">
+                    <div id="timer-label">
                         <h2>{this.props.currentRun}</h2>
                     </div>
-                    <div id="timer-time">
+                    <div id="time-left">
                         <h2>{this.timerDisplay()}</h2>
                     </div>
                 </div>
